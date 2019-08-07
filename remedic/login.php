@@ -58,7 +58,37 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
 
             <div class="col-md-8 ftco-animate text-center">
+<h3>
+  <p class="bg-danger" align="center">
+    <b>
+      <?php
+      session_start();
+      ob_start();
+      include("conexion.php");
+      if (isset($_SESSION['sesion_exito'])){
+        if ($_SESSION['sesion_exito']==2){
+          echo "Los campos son OBLIGATORIOS";
+        }
+          if ($_SESSION['sesion_exito']==3) {
+            echo "DATOS INCORRECTOS";
+        }
+      }else{
+        $_SESSION['sesion_exito']=0;
+      }
+       ?>
+    </b>
+  </p>
 
+  <p class="bg-success" align="center"></p>
+  <b>
+    <?php
+      if ($_SESSION['sesion_exito']==4) {
+        echo "GRACIAS POR USAR NUESTRO SERVICIO";
+      }
+      $_SESSION['sesion_exito']=0;
+     ?>
+  </b>
+</h3>
 <!--LOGIN-->
             <div class="container" id="contenido">
                 <form  method="post" action="validar.php">
@@ -71,12 +101,9 @@
                 </form>
                 <a href="registrar_cuenta.html" id="carga_crear_cuenta">Crear Cuenta</a>
             </div>
-
           </div>
         </div>
       </div>
-
-
     </div>
 
 

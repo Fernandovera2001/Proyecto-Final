@@ -10,11 +10,6 @@
     //              //       //       //            //          //          //                  //                             //             //           //
     //              //          //    ////////////////          //          //////////////////  //////////////////             //             ///////////////
 -->
-<?php
-session_start();
-include("conexion.php");
-
-if (isset($_SESSION["nombre"])) {?>
 
   <!DOCTYPE html>
   <html lang="en">
