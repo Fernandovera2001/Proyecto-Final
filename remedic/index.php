@@ -10,7 +10,15 @@
     //              //       //       //            //          //          //                  //                             //             //           //
     //              //          //    ////////////////          //          //////////////////  //////////////////             //             ///////////////
 -->
-
+<?php
+session_start();
+ob_start();
+if ($_SESSION['session_start'] == false) {
+  header("Location: login.php");
+}else {
+  header("Location index.php");
+}
+ ?>
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -235,8 +243,3 @@
 
     </body>
   </html>
-<?php
-}else {
-  header("location: login.php");
-}
- ?>
