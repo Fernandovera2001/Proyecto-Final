@@ -1,6 +1,7 @@
 <?php
-session_start();
-ob_start();
+include("conexion.php");
+
+
 
 if (isset($_POST['entrar'])){ //Verifico que el boton "Iniciar Sesion" fue oprimido
 	$_SESSION['sesion_exito']=0;
@@ -24,4 +25,3 @@ if (isset($_POST['entrar'])){ //Verifico que el boton "Iniciar Sesion" fue oprim
 if ($_SESSION['sesion_exito']!=1) {
 	header("Location: login.php");
 }
-//video https://www.youtube.com/watch?v=NRB7Eppn8kc
