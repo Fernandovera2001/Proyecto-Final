@@ -54,10 +54,11 @@
                   <br>
                   <input type="password" id="contraseña" name="password" required placeholder="Contraseña">
                   <br>
+                  <input type="password2" id="contraseña2" name="password" required placeholder="Confirmar Contraseña">
                   <br>
-                  <button name="entrar" id="entrar" type="submit">Iniciar Sesion</button>
+                  <br>
+                  <button name="entrar" id="entrar" type="submit">Registrar</button>
                 </form>
-                <a href="registrar_cuenta.php" id="carga_crear_cuenta">Crear Cuenta</a>
             </div>
           </div>
         </div>
@@ -164,8 +165,8 @@
   <script src="js/bootstrap.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/npm.js"></script>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  
+  <script type="js/jquery.js"></script>
+
   </script>
   </body>
 </html>
