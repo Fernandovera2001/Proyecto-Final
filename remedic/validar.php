@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 
-if ($_POST['usuario']=="" or $_POST['clave']=="") {
+if ($_POST['usuario']=="" or $_POST['password']=="") {
   header("location:login.php");
 }else {
   $usuario = $_POST['usuario'];
