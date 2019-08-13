@@ -13,7 +13,8 @@
       //              //          //    ////////////////          //          //////////////////  //////////////////             //             ///////////////
   -->
   <?php
-  include("session.php");
+  include("seguridad.php");
+  include("conexion.php");
   ?>
   <!DOCTYPE html>
   <html lang="en">

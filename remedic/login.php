@@ -10,13 +10,6 @@
     //              //       //       //            //          //          //                  //                             //             //           //
     //              //          //    ////////////////          //          //////////////////  //////////////////             //             ///////////////
 -->
-<?php
-include("validar.php");
-
-if(isset($_SESSION['login_user_sys'])){
-header("location: index.php");
-}
- ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -170,6 +163,5 @@ header("location: index.php");
   <script src="js/bootstrap.min.js"></script>
   <script src="js/npm.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
-
   </body>
 </html>
