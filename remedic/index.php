@@ -57,7 +57,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="doctor.html" class="nav-link">Doctores</a></li>
-            <li class="nav-item"><a href="ver_turnos.php" class="nav-link">Ver Turnos</a></li>
+            <li class="nav-item"><a href="ver_turnos.html" class="nav-link">Ver Turnos</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
             <li class="nav-item"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
@@ -95,13 +95,13 @@
                   <!-- CALENDARIO PARA LOS TURNOS -->
                   <form action="registrar_turno.php" method="post">
                     Coloque Titulo
-                    <br><input type="text" name="titulo"><br>
+                    <br><input type="text" required name="titulo"><br>
 
                     Eliga Fecha<br>
-                    <input id="fecha" name="fecha" type="date"><br>
+                    <input id="fecha" required name="fecha" type="date"><br>
 
                     Eliga Hora<br>
-                    <select id="horario" name="horario">
+                    <select id="horario" required name="horario">
                       <option></option>
                       <option id="9">9</option>
                       <option id="10">10</option>
@@ -239,5 +239,4 @@
     <script src="js/main.js"></script>
 
     </body>
-  </html>seguridad.php<?php
-include("");   ?>
+  </html>
