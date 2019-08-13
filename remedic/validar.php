@@ -4,7 +4,7 @@ if ($_POST['usuario']=="" or $_POST['clave']=="") {
 	header("location: login.php");
 }else{
 	$usuario = $_POST['usuario'];
-	$clave = $_POST['clave'];
+	$clave = md5($_POST['clave']);
 	$query = mysqli_query($conexion, "SELECT id FROM login WHERE usuario = '$usuario' and contrasenia = '$clave'");
 	$n = mysqli_num_rows($query);
 		if ($n == 0) {
