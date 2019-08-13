@@ -1,46 +1,49 @@
 <?php
-include("conexion.php");
+session_start(); // Iniciando sesion
+if (isset($_POST['submit'])) {
+if (empty($_POST['usuario']) || empty($_POST['clave'])) {
+$error = "Usuario o contraseña invalidos";
+}else{
+// Define $username y $password
+$username=$_POST['usuario'];
+$password=$_POST['clave'];
+// Estableciendo la conexion a la base de datos
+include("db.php");//Contienen las variables, el servidor, usuario, contraseña y nombre  de la base de datos
+include("conexion.php");//Contiene de conexion a la base de datos
 
-if ($_POST['usuario']=="" or $_POST['password']=="") {
-  header("location:login.php");
-}else {
-  $usuario = $_POST['usuario'];
-  $password = $_POST['password'];
-  $query = mysqli_query($conexion, "SELECT * FROM login WHERE usuario='$usuario' and contrasenia='$password'");
-  $n = mysqli_num_rows($query);
-  if ($n == 0) {
-    header("location:login.php");
-  }else {
-    session_start();
-    $_SESSION['usuario'] = $usuario;
-    $_SESSION['password'] = $password;
-    header("location:index.php");
-  }
+// Para proteger de Inyecciones SQL
+$username = mysqli_real_escape_string($conexion,(strip_tags($username,ENT_QUOTES)));
+$password =  sha1($password);//Algoritmo de encriptacion de la contraseña http://php.net/manual/es/function.sha1.php
+
+$sql = "SELECT usuario, contrasenia FROM login WHERE usuario = '" . $username . "' and contrasenia='".$password."';";
+$query=mysqli_query($conexion,$sql);
+$counter=mysqli_num_rows($query);
+if ($counter==1){
+		$_SESSION['login_user_sys']=$username; // Iniciando la sesion
+		header("location: index.php");
+} else {
+$error = "El usuario o la contraseña es inválida.";
+      }
+    }
 }
-exit();
 
 
-/*
-if (isset($_POST['entrar'])){ //Verifico que el boton "Iniciar Sesion" fue oprimido
-	$_SESSION['sesion_exito']=0;
-
+/*include("conexion.php");
+if ($_POST['usuario']=="" or $_POST['clave']=="") {
+	header("location: login.php");
+}else{
 	$usuario = $_POST['usuario'];
-	$password = $_POST['password'];
-
-	if ($usuario == "" || $password== "") {
-		$_SESSION['sesion_exito']=2; //2 sera error de campos vacios.
-	}else {
-		$_SESSION['sesion_exito']=3; //3 DATOS INCORRECTOS
-		$resultados = mysqli_query($conexion, "SELECT * FROM login WHERE usuario = '$usuario' AND contrasenia = '$password'");
-
-		while ($consulta = mysqli_fetch_array($resultados)) {
-			$_SESSION['sesion_exito']=1;//1 Inicio sesion
-		}
-		include("cerrar_conexion.php");
+	$clave = $_POST['clave'];
+	$query = mysqli_query($conexion, "SELECT id FROM login WHERE usuario = '$usuario' and usuario_clave = '$clave'");
+	$n = mysqli_num_rows($query);
+		if ($n == 0) {
+			header("location: login.php");
+	}else{
+		session_start();
+		$_SESSION['usuario'] = $usuario;
+		$_SESSION['autenticado'] = 'si';
+		header("location: index.php");
 	}
 }
-
-if ($_SESSION['sesion_exito']!=1) {
-	header("Location: login.php");
-}
-/*
+exit();
+*/

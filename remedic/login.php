@@ -10,8 +10,13 @@
     //              //       //       //            //          //          //                  //                             //             //           //
     //              //          //    ////////////////          //          //////////////////  //////////////////             //             ///////////////
 -->
+<?php
+include("validar.php");
 
-
+if(isset($_SESSION['login_user_sys'])){
+header("location: index.php");
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,12 +55,12 @@
 <!--LOGIN-->
             <div class="container" id="contenido">
                 <form id="alta"  method="post" action="validar.php">
-                  <input type="text" id="usuario" name="nombre" required placeholder="Usuario">
+                  <input type="text" id="usuario" name="usuario" required placeholder="Usuario">
                   <br>
-                  <input type="password" id="contraseña" name="password" required placeholder="Contraseña">
+                  <input type="password" id="clave" name="clave" required placeholder="Contraseña">
                   <br>
                   <br>
-                  <button name="entrar" id="entrar" type="submit">Iniciar Sesion</button>
+                  <button name="submit" type="submit">Acceder</button>
                 </form>
                 <a href="registrar_cuenta.php" id="carga_crear_cuenta">Crear Cuenta</a>
             </div>
@@ -165,7 +170,6 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/npm.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
-  
-  </script>
+
   </body>
 </html>

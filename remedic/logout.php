@@ -1,7 +1,5 @@
 <?php
 session_start();
-session_destroy();
-echo "Cerraste Sesion";
-header('Location: login.php');
-
-?>
+if(session_destroy()){ // Destruye todas las sesiones
+header("Location: index.php"); // Redireccionando a la pagina index.php
+}
