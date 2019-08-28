@@ -49,7 +49,7 @@
 <!--LOGIN-->
             <div class="container" id="contenido_registrar">
               <form id="alta"  method="post" action="validar.php">
-                <input type="text" id="usuario" name="usuario" required placeholder="Usuario">
+                <input type="email" id="email" name="email" required placeholder="Email">
                 <br>
                 <input type="password" id="clave" name="clave" required placeholder="Contraseña">
                 <br>
@@ -170,7 +170,6 @@
     $(document).ready(function(){
       $("#btn_crearcuenta").on("click",function(){ //APRETAMOS EL BOTON CON EL ID #btn_crearcuenta
         $.ajax({
-          type: "POST",
           url: "registrar_cuenta.php", //TRAE LO QUE ESTA EN registrar_cuenta.html
           success: function(response){
             $("#contenido_registrar").html(response); //Y LO IMPRIME EN EL ID contenido_registrar

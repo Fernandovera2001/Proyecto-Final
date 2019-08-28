@@ -1,20 +1,21 @@
-<form id="form1">
-  <input type="text" id="nombre"  placeholder="Nombre">
+<h3>Formulario de registro</h3>
+<form action="validar_registro.php" method="Post" id="consulta">
+  <input type="text" id="nombre" name="nombre" placeholder="Nombre">
   <br>
-  <input type="text" id="apellido"  placeholder="Apellido">
+  <input type="text" id="apellido" name="apellido"  placeholder="Apellido">
   <br>
-  <input type="text" id="email"  placeholder="Email">
+  <input type="text" id="gmail" name="email"  placeholder="Email">
   <br>
-  <input type="text" id="usuario"  placeholder="Usuario">
+  <input type="password" id="clave" name="clave"  placeholder="Clave">
   <br>
-  <input type="password" id="clave"  placeholder="Clave">
-  <br>
-  <input type="password" id="clave2"  placeholder="Confirmar Clave">
+  <input type="password" id="clave1" name="clave1" placeholder="Confirmar Clave">
   <br>
   <br>
   <button type="submit" id="registrar_cuenta">Registrar Cuenta</button>
 </form>
   <button name="submit" id="volver_login" type="submit">Volver a Login</button>
+
+
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript">
   //AJAX TRAE EL FORMULARIO REGISTRAR CUENTA
@@ -28,36 +29,5 @@
           }
         });
       });
-
-      //AJAX PARA MANDAR DATOS POR GET
-      $("#registrar_cuenta").click(function(){
-        var nombre = $("#nombre").val();
-        var apellido = $("#apellido").val();
-        var email = $("#email").val();
-        var usuario = $("#usuario").val();
-        var clave = $("#clave").val();
-        var clave2 = $("#clave2").val();
-
-          if (nombre =="") {
-            alert("Debes completar con tu nombre");
-          }
-          if (apellido =="") {
-            alert("Debes completar con tu apellido");
-          }
-          if (email =="") {
-            alert("Debes completar con algun email");
-          }
-          if (usuario =="") {
-            alert("Debes completar con algun usuario");
-          }
-          if (clave =="") {
-            alert("Debes completar con alguna contraseña");
-          }
-          if (clave != clave2) {
-            alert("Las contraseñas deben ser iguales");
-          }
-          
-      })
-
     });
   </script>
