@@ -8,7 +8,7 @@ $query = mysqli_query($conexion, "SELECT id, tipo FROM login WHERE  email = '$em
 
 $result = mysqli_num_rows($query);
 	if ($result == 0) {
-		header("location: login.php?n=1");
+		header("location: login.php");
 	}else {
 		$row = mysqli_fetch_array($query);
 			$tipo = $row['tipo'];
@@ -20,7 +20,6 @@ $result = mysqli_num_rows($query);
 				header("location: interfaz_medic.php");
 			}else {
 				header("location: index.php");
-
 		}
 	}
 
