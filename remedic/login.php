@@ -54,7 +54,7 @@
                 <input type="password" id="clave" name="clave" required placeholder="Contraseña">
                 <br>
                 <br>
-                <button name="acceder" type="submit">Acceder</button>
+                <button name="acceder" id="acceder">Acceder</button>
               </form>
                 <button name="submit" type="submit" id="btn_crearcuenta">Crear Cuenta</button>
             </div>
