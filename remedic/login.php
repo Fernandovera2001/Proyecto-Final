@@ -46,8 +46,8 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-8 ftco-animate text-center">
-<!--LOGIN-->
             <div class="container" id="contenido_registrar">
+                <a class="btn" id="btn_olvidepass">Olvide mi contraseña</a>
               <form id="alta"  method="post" action="validar.php">
                 <input type="email" id="email" name="email" required placeholder="Email">
                 <br>
@@ -176,6 +176,16 @@
           }
         });
       });
+
+    $("#btn_olvidepass").on("click",function(){
+      $.ajax({
+        url: "recuperar_pass.php",
+        success: function(response){
+          $("#contenido_registrar").html(response);
+          }
+        });
+      });
+
 
     });
   </script>

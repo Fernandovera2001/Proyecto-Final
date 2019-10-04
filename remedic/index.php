@@ -89,8 +89,7 @@
 
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
 
-                <div class="tab-pane fade show active py-5" id="v-pills-master" role="tabpanel" aria-labelledby="v-pills-master-tab">
-                  <span class="icon mb-3 d-block flaticon-tooth">Odontología</span>
+                <h1><span class="icon mb-3 d-block flaticon-tooth">Odontología</span></h1>
 
                   <!-- CALENDARIO PARA LOS TURNOS -->
                   <form action="registrar_turno.php" method="post">
@@ -98,7 +97,7 @@
                     <br><input type="text" required name="titulo"><br>
 
                     Eliga Fecha<br>
-                    <input id="fecha" required name="fecha" type="date"><br>
+                    <input id="fecha" required name="fecha" type="datetime-local"><br>
 
                     Eliga Hora<br>
                     <select id="horario" required name="horario">
@@ -117,7 +116,7 @@
                     <button type="submit">Reservar</button>
                   </form>
                     <!-- TERMINA CALENDARIO PARA LOS TURNOS -->
-                </div>
+
               </div>
             </div>
           </div>

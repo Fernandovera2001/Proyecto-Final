@@ -1,11 +1,11 @@
-
+<a class="btn" id="btn_olvidepass">Olvide mi contraseña</a>
 <form id="alta"  method="post" action="validar.php">
-  <input type="text" id="usuario" name="usuario" required placeholder="Usuario">
+  <input type="email" id="email" name="email" required placeholder="Email">
   <br>
   <input type="password" id="clave" name="clave" required placeholder="Contraseña">
   <br>
   <br>
-  <button name="acceder" type="submit">Acceder</button>
+  <button name="acceder" id="acceder">Acceder</button>
 </form>
   <button name="submit" type="submit" id="btn_crearcuenta">Crear Cuenta</button>
   <script type="text/javascript" src="js/jquery.js"></script>
@@ -22,5 +22,13 @@
         });
       });
 
+      $("#btn_olvidepass").on("click",function(){
+        $.ajax({
+          url: "recuperar_pass.php",
+          success: function(response){
+            $("#contenido_registrar").html(response);
+            }
+          });
+        });
     });
   </script>
