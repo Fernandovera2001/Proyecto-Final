@@ -3,31 +3,32 @@
   <input type="submit" name="pacientes" id="btn_pacientes" value="Pacientes">
   <input type="submit" name="pacientes" id="btn_volver" value="Volver">
 </div>
+<br>
 
-<?php
-include("conexion.php");
-$sql = ""
- ?>
+<div class="">
 
 
-<?php
+<table border="1">
+  <tr>
+    <td>Titulo</td>
+    <td>Fecha</td>
+    <td>Hora</td>
+  </tr>
 
-// $sql = "SELECT * FROM persons";
-// if($result = mysqli_query($link, $sql)){
-//     if(mysqli_num_rows($result) > 0){
-//         echo "<table>";
-//             echo "<tr>";
-//                 echo "<th>id</th>";
-//                 echo "<th>first_name</th>";
-//                 echo "<th>last_name</th>";
-//                 echo "<th>email</th>";
-//             echo "</tr>";
-//         while($row = mysqli_fetch_array($result)){
-//             echo "<tr>";
-//                 echo "<td>" . $row['id'] . "</td>";
-//                 echo "<td>" . $row['first_name'] . "</td>";
-//                 echo "<td>" . $row['last_name'] . "</td>";
-//                 echo "<td>" . $row['email'] . "</td>";
-//             echo "</tr>";
-//         }
- ?>
+  <?php
+  include("conexion.php");
+  $sql = "SELECT titulo, fecha, hora FROM turnos";
+  $result = mysqli_query($conexion, $sql);
+
+  while ($mostrar = mysqli_fetch_array($result)) {
+   ?>
+  <tr>
+    <td><?php echo $mostrar['titulo']; ?></td>
+    <td><?php echo $mostrar['fecha']; ?></td>
+    <td><?php echo $mostrar['hora']; ?></td>
+  </tr>
+  <?php
+}
+   ?>
+</table>
+</div>
