@@ -1,12 +1,10 @@
 <?php
+session_start();
 include("conexion.php");
 $titulo = $_POST['titulo'];
 $fecha = $_POST['fecha'];
 $horario = $_POST['horario'];
 
-$result = mysqli_query($conexion, "INSERT INTO turnos (titulo, fecha, hora) VALUES ('$titulo', '$fecha', '$horario')");
-header ("location:ver_turnos.php");
-
-
+$result = mysqli_query($conexion, "INSERT INTO turnos (id_pacientes, titulo, fecha, hora) VALUES ('$_SESSION[id]','$titulo', '$fecha', '$horario')");
 
  ?>

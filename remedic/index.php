@@ -97,7 +97,7 @@
                     <br><input type="text" required name="titulo"><br>
 
                     Eliga Fecha<br>
-                    <input id="fecha" required name="fecha" type="datetime-local"><br>
+                    <input id="fecha" name="fecha" type="date" required min="<?php echo date("y-m-d"); ?>"><br>
 
                     Eliga Hora<br>
                     <select id="horario" required name="horario">

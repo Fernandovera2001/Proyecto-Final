@@ -12,8 +12,10 @@ $result = mysqli_num_rows($query);
 	}else {
 		$row = mysqli_fetch_array($query);
 			$tipo = $row['tipo'];
+			$id = $row['id'];
 			session_start();
 			$_SESSION['email'] = $email;
+			$_SESSION['id'] = $id;
 			$_SESSION['autenticado'] = 'si';
 
 			if ($tipo == 'doctor') {

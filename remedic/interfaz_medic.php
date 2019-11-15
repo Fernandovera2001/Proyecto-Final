@@ -64,7 +64,7 @@
       <!-- END nav -->
 
       <section class="ftco-services">
-        <div class="container">
+        <div class="container" id="container">
           <div class="row no-gutters">
             <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
@@ -199,7 +199,7 @@
             type: "POST",
             url: "ver_turnos.php",
             success: function(response){
-              $("#v-pills-tabContent").html(response);
+              $("#container").html(response);
             }
           });
         });
