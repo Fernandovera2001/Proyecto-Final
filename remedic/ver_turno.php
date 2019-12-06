@@ -55,7 +55,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="ver_turno.php" class="nav-link">Ver mis turnos</a></li>
             <li class="nav-item"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
@@ -80,40 +80,14 @@
           <div class="row no-gutters">
             <div class="col-md-4 ftco-animate py-5 nav-link-wrap">
               <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><span class="mr-3 flaticon-tooth"></span> Odontologia</a>
+                <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><span class="mr-3 flaticon-tooth"></span>Turnos</a>
               </div>
             </div>
             <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
-
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
+                <h1><span class="icon mb-3 d-block flaticon-tooth">Turnos</span></h1>
+                <!-- ACA MOSTRAR TURNOS DEL PACIENTE QUE ESTA LOGEADO  -->
 
-                <h1><span class="icon mb-3 d-block flaticon-tooth">Odontología</span></h1>
-
-                  <!-- CALENDARIO PARA LOS TURNOS -->
-                  <form action="registrar_turno.php" method="post">
-                    Coloque Titulo
-                    <br><input type="text" required name="titulo"><br>
-
-                    Eliga Fecha<br>
-                    <input id="fecha" name="fecha" type="date" required min="<?php echo date("y-m-d"); ?>"><br>
-
-                    Eliga Hora<br>
-                    <select id="horario" required name="horario">
-                      <option></option>
-                      <option id="9">9</option>
-                      <option id="10">10</option>
-                      <option id="11">11</option>
-                      <option id="12">12</option>
-                      <option id="13">13</option>
-                      <option id="14">14</option>
-                      <option id="15">15</option>
-                      <option id="16">16</option>
-                      <option id="17">17</option>
-                      <option id="18">18</option>
-                    </select>HS
-                    <button type="submit">Reservar</button>
-                  </form>
-                    <!-- TERMINA CALENDARIO PARA LOS TURNOS -->
 
               </div>
             </div>
