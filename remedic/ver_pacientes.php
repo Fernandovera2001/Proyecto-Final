@@ -42,33 +42,3 @@ include("conexion.php");
    ?>
 </table>
 </div>
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("#pacientes").keyup(function(){
-      var pacientes = $("#pacientes").val();
-      alert(pacientes);
-      if (pacientes.length > 1) {
-        $("#listado").show();
-        .get("busca_pacientes.php",{busca:pacientes}, function(respuesta){
-          $("#listado").html(respuesta);
-        });
-      } else {
-        $("#listado").hide();
-      }
-    });
-
-
-    $("#volver_turnos").on("click",function(){
-      $.ajax({
-        type: "POST",
-        url: "ver_turnos.php",
-        success: function(response){
-          $("#container").html(response);
-        }
-      });
-    });
-
-  });
-</script>

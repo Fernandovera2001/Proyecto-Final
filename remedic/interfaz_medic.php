@@ -238,6 +238,41 @@
             }
           });
         });
+
+        $("#container").on("click" ,"#volver_turnos", function(){
+          $.ajax({
+            type: "POST",
+            url: "ver_turnos.php",
+            success: function(response){
+              $("#container").html(response)
+            }
+          });
+        });
+
+        $("#container").on("click", "#btn_pacientes", function(){
+          $.ajax({
+            type: "POST",
+            url: "ver_pacientes.php",
+            success: function(response){
+              $("#container").html(response);
+            }
+          });
+        });
+
+
+
+        $("#container").on("keyup","#pacientes", function(){
+          var pacientes = $("#pacientes").val();
+          if (pacientes.length > 1) {
+            $("#listado").show();
+            $.get("busca_pacientes.php", {busca:pacientes}, function(respuesta){
+              $("#listado").html(respuesta);
+            });
+          }else {
+            $("#listado").hide();
+          }
+        });
+
       });
     </script>
     </body>

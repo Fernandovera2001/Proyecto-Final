@@ -1,9 +1,9 @@
 <h3>Olvide mi Contraseña</h3>
-<form  id="form_olvide_pass" action="recuperar_pass.php">
+<form  id="form_olvide_pass" method="post" action="iniciar_recupero.php">
   <input type="text" id="mail" name="mail" placeholder="Mail">
   <br>
   <br>
-  <button type="button" id="recuperar_pass">Recuperar Contraseña</button>
+  <button type="submit" id="recuperar_pass">Recuperar Contraseña</button>
 </form>
   <button name="submit" id="volver_login">Volver a Login</button>
 
@@ -21,21 +21,3 @@
       });
     });
   </script>
-
-<?php
-include("conexion.php");
-  $email = $_POST['mail'];
-  $query = mysqli_query($conexion, "SELECT id FROM login WHERE email = '$email'"); //
-  $n = mysqli_num_rows($query);
-    if ($n == 1) {
-      $row = mysqli_fetch_assoc($query);
-      $_SESSION['email'] = $row['email'];
-      $msg = "Tu contraseña es:".$row['contrasenia'];
-      mail($row['email'], "Contraseña Olvidada; REMEDIC", $msg);
-    }else {
-
-    }
-
-
-
-?>

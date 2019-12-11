@@ -87,8 +87,21 @@
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
                 <h1><span class="icon mb-3 d-block flaticon-tooth">Turnos</span></h1>
                 <!-- ACA MOSTRAR TURNOS DEL PACIENTE QUE ESTA LOGEADO  -->
+                <?php $sql = "SELECT fecha, hora FROM turnos WHERE id='$_SESSION[id]'";
+                $resultado = mysqli_query($conexion, $sql);
+                while ($ver = mysqli_fetch_array($resultado)) {?>
+                <table>
+                  <tr>
+                    <th>Hora</th>
+                    <th>Fecha</th>
+                  </tr>
 
-
+                  <tr>
+                    <th><?php echo $ver['hora']; ?></th>
+                    <th><?php echo $ver['fecha']; ?></th>
+                  </tr>
+                </table>
+<?php } ?>
               </div>
             </div>
           </div>
