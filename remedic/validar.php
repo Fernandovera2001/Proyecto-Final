@@ -5,7 +5,6 @@ $email = $_POST['email'];
 $clave = $_POST['clave'];
 
 $query = mysqli_query($conexion, "SELECT id, tipo FROM login WHERE  email = '$email' and contrasenia = '$clave'");
-
 $result = mysqli_num_rows($query);
 	if ($result == 0) {
 		header("location: login.php");

@@ -3,7 +3,7 @@ include("conexion.php");
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['gmail'];
-$fecha_nacimiento = ['fecha_nacimiento'];
+$fecha_nacimiento = $_POST['fecha_nacimiento'];
 $dni = $_POST['dni'];
 $generos = $_POST['generos'];
 $obra_social = $_POST['obra_social'];

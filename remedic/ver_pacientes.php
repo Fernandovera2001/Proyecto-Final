@@ -1,3 +1,4 @@
+
 <?php
 include("conexion.php");
 ?>
@@ -7,14 +8,14 @@ include("conexion.php");
 <p><label>Escriba el apellido:</label><br>
 <input type="text" id="pacientes"></p>
 
-<div class="listado" id="listado" style="display:none; border: solid 1px #ccc; width: 300px">
+<div class="listado" id="listado" style="display:none; width: 100px">
 
 </div>
 <br>
 <br>
 <div class="ver_pacientes" id="ver_pacientes">
 <table border="1">
-  <tr>
+  <tr class="titulo">
     <td>Apellido</td>
     <td>Nombre</td>
     <td>Email</td>

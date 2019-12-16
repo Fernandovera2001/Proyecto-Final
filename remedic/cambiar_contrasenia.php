@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="interfaz_medic.php" class="nav-link">Inicio</a></li>
-            <li class="nav-item active"><a href="cambiar_contrasenia.php" class="nav-link">Cambiar Contraseña</a></li>
+            <li class="nav-item active"><a href="cambiar_contraseña.php" class="nav-link">Cambiar Contraseña</a></li>
             <li class="nav-item"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
         </div>
@@ -70,44 +70,21 @@
       <!-- END nav -->
 
       <section class="ftco-services">
-        <div class="container" id="container" style="width: 1100px;">
-          <input type="submit" name="pacientes" id="btn_pacientes" value="Pacientes">
+
+        <!-- COMIENZA FORMULARIO CAMBIAR CONTRASEÑA -->
+        <div class="container" style="width: 1100px;">
           <br>
-          <br>
-          <div class="turnos_pacientes" id="turnos_pacientess">
-          <table border="1">
-            <tr>
-              <td>Nombre</td>
-              <td>Apellido</td>
-              <td>Email</td>
-              <td>Titulo</td>
-              <td>Fecha</td>
-              <td>Hora</td>
-            </tr>
-
-            <?php
-            include("conexion.php");
-            $sql = "SELECT * FROM turnos INNER JOIN login ON turnos.id_pacientes = login.id";
-            $result = mysqli_query($conexion, $sql);
-
-            //$resultado = mysqli_query($conexion, "SELECT nombre FROM login WHERE email = '$email'");
-            while ($mostrar = mysqli_fetch_array($result)) {
-             ?>
-            <tr>
-              <td><?php echo $mostrar['nombre']; ?></td>
-              <td><?php echo $mostrar['apellido']; ?></td>
-              <td><?php echo $mostrar['email']; ?></td>
-              <td><?php echo $mostrar['titulo']; ?></td>
-              <td><?php echo $mostrar['fecha']; ?></td>
-              <td><?php echo $mostrar['hora']; ?></td>
-            </tr>
-            <?php
-          }
-             ?>
-          </table>
+          <h5>Cambiar Contraseña</h5>
+          <form method="post" action="password_change.php">
+            <p>Email: <input type="text" name="email"></p>
+            <p>Contraseña: <input type="password" name="password"></p>
+            <p>Nueva Contraseña: <input type="password" name="newpassword"></p>
+            <p>Confirmar Nueva Contraseña: <input type="password" name="confirmnewpassword"></p>
+            <p><input type="submit" value="Actualizar Contraseña">
+          </form>
           </div>
-          </div>
-
+          <!-- TERMINA FORMULARIO CAMBIAR CONTRASEÑA -->
+          
           <div class="row no-gutters">
             <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
@@ -234,52 +211,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
-        $("#btn_pacientes").on("click",function(){
-          $.ajax({
-            type: "POST",
-            url: "ver_pacientes.php",
-            success: function(response){
-              $("#container").html(response);
-            }
-          });
-        });
-
-        $("#container").on("click" ,"#volver_turnos", function(){
-          $.ajax({
-            type: "POST",
-            url: "ver_turnos.php",
-            success: function(response){
-              $("#container").html(response)
-            }
-          });
-        });
-
-        $("#container").on("click", "#btn_pacientes", function(){
-          $.ajax({
-            type: "POST",
-            url: "ver_pacientes.php",
-            success: function(response){
-              $("#container").html(response);
-            }
-          });
-        });
-
-
-
-        $("#container").on("keyup","#pacientes", function(){
-          var pacientes = $("#pacientes").val();
-          if (pacientes.length > 1) {
-
-            $("#listado").show();
-            $.get("busca_pacientes.php", {busca:pacientes}, function(respuesta){
-              $("#listado").html(respuesta);
-            });
-          }else {
-
-            $("#listado").hide();
-          }
-        });
+    $(document).ready(function(){
 
       });
     </script>
