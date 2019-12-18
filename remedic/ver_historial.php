@@ -11,91 +11,141 @@
     //              //          //    ////////////////          //          //////////////////  //////////////////             //             ///////////////
 -->
 <?php
+include("seguridad.php");
 include("conexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://kit.fontawesome.com/9305e722fd.js" crossorigin="anonymous"></script>
     <title>Remedic</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+
     <link rel="stylesheet" href="css/aos.css">
+
     <link rel="stylesheet" href="css/ionicons.min.css">
+
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
+
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="confirmar_pass.php"><i class="flaticon-pharmacy"></i><span>Re</span>Medic</a>
+      <a class="navbar-brand" href="index.php"><i class="flaticon-pharmacy"></i><span>Re</span>Medic</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
+          <li class="nav-item active"><a href="ver_turno.php" class="nav-link">Ver mis turnos</a></li>
+          <li class="nav-item "><a href="ver_historial.php" class="nav-link">Ver mi historial</a></li>
+          <li class="nav-item active"><a href="cambiar_contrasenia_user.php" class="nav-link">Cambiar Contraseña</a></li>
+          <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
     <!-- END nav -->
-    <div class="hero-wrap" style="background-image: url('images/bg_1.jpg'); background-attachment:fixed;">
+
+    <div class="hero-wrap" style="background-image: url('images/bg_1.jpg'); height:400px; ">
       <div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-8 ftco-animate text-center">
-            <div class="container" id="contenido_registrar">
-                <h3>Confirmar Contraseña</h3>
-                <form action="validar_token.php" method="post">
-                  <p><input type="email" name="email" placeholder="Gmail"></p>
-                  <p><input type="password" name="token" placeholder="Token"></p>
-                  <p><input type="password" name="newpssw" placeholder="Nueva contraseña"></p>
-                  <p><input type="submit" value="Cambiar Contraseña">
-                </form>
-            </div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <h1 class="mb-4">LO MÁS VALIOSO ES TU SALUD.</h1>
           </div>
         </div>
       </div>
     </div>
+
+    <section class="ftco-services">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-4 ftco-animate py-5 nav-link-wrap">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><i class="far fa-address-book"></i>Historial Clinico</span></a>
+            </div>
+          </div>
+          <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
+            <div class="tab-content pl-md-5" id="v-pills-tabContent">
+              <h1><span class="icon mb-3 d-block"><i class="far fa-address-book"></i>Historial Clinico</span></h1>
+              <!-- ACA MOSTRAR TURNOS DEL PACIENTE QUE ESTA LOGEADO  -->
+              <table border="1">
+                <tr>
+                  <td>Fecha de la consulta</td>
+                  <td>Historial</td>
+                </tr>
+
+                <?php
+                include("conexion.php");
+                $sql = "SELECT * FROM historial_clinico WHERE id_pacientes = '".$_SESSION['id']."'";
+                $result = mysqli_query($conexion, $sql);
+
+                while ($mostrar = mysqli_fetch_array($result)) {
+                 ?>
+                <tr>
+                  <td><?php echo $mostrar['fecha_consulta']; ?></td>
+                  <td><?php echo $mostrar['historial']; ?></td>
+                </tr>
+                <?php
+              }
+                 ?>
+              </table>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <br>
+
 <!-- FOOTER-->
     <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
-    	<div class="overlay"></div>
+      <div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Redes Sociales</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-instagram"></span><span class="text">Direccion</li>
-	                <li><span class="icon icon-facebook"></span><span class="text">WPP</span></a></li>
-	                <li><span class="icon icon-twitter"></span><span class="text">dam@hospitalbariloche.com.ar</span></a></li>
-	              </ul>
-	            </div>
-              <!-- <h2 class="ftco-heading-2">Remedic</h2>
+              <h2 class="ftco-heading-2">Remedic</h2>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <br>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <br>
                 <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul> -->
+              </ul>
             </div>
           </div>
+
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">¿Tiene alguna pregunta?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Direccion</li>
-	                <li><span class="icon icon-phone"></span><span class="text">WPP</span></a></li>
-	                <li><span class="icon icon-envelope"></span><span class="text">dam@hospitalbariloche.com.ar</span></a></li>
-	              </ul>
-	            </div>
+              <h2 class="ftco-heading-2">¿Tiene alguna pregunta?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Francisco Perito Moreno 601, San Carlos de Bariloche, Río Negro</span></li>
+                  <li><span class="icon icon-phone"></span><span class="text">0294 442-6100</span></a></li>
+                  <li><span class="icon icon-envelope"></span><span class="text">dam@hospitalbariloche.com.ar</span></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -103,8 +153,12 @@ include("conexion.php");
         </div>
       </div>
     </footer>
+
+
+
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
   <!-- Modal -->
     <div class="modal fade" id="modalAppointment" tabindex="-1" role="dialog" aria-labelledby="modalAppointmentLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -139,6 +193,8 @@ include("conexion.php");
                   </div>
                 </div>
               </div>
+
+
               <div class="form-group">
                 <label for="appointment_message" class="text-black">Message</label>
                 <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10"></textarea>
@@ -148,9 +204,16 @@ include("conexion.php");
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </div>
+    <style type="text/css">@import url("css/calendar-blue.css");</style>
+<script src="js/calendar.js" type="text/javascript"></script>
+<script src="js/calendar-es.js" type="text/javascript"></script>
+<script src="js/calendar-setup.js" type="text/javascript"></script>
+
+
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -168,18 +231,5 @@ include("conexion.php");
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/npm.js"></script>
-
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript">
-  //AJAX TRAE EL FORMULARIO REGISTRAR CUENTA
-    $(document).ready(function(){
-
-
-    });
-  </script>
   </body>
 </html>

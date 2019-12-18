@@ -8,11 +8,10 @@
     $query = mysqli_query($conexion, "SELECT email FROM login WHERE  email = '$mail'");
     $result = mysqli_num_rows($query);
       if ($result == 0) {
-        echo "El mail no se encuentra en la base";
-        ?>
-        <br>
-        <a href="login.php">Volver</a>
-        <?php
+        echo '<script type="text/javascript">
+    		alert("No se encuentra el mail en la base");
+    		window.location.href="login.php";
+        </script>';
       }else {
         $resultado = mysqli_query($conexion,"UPDATE login SET token='$encriptado' WHERE email ='$mail'");
         $query = mysqli_query($conexion, "SELECT email, token FROM login WHERE  email = '$mail'");

@@ -1,5 +1,3 @@
-
-
   <!--//////////////  ////////////////  ///////////////   //              //  //////////////////  //////////////////  ////////////////////////  ///////////////
       //          //  //            //  //            //    //          //    //                  //                             //             //           //
       //          //  //            //  //            //      //      //      //                  //                             //             //           //
@@ -57,6 +55,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="ver_turno.php" class="nav-link">Ver mis turnos</a></li>
+            <li class="nav-item active"><a href="ver_historial.php" class="nav-link">Ver mi historial</a></li>
             <li class="nav-item active"><a href="cambiar_contrasenia_user.php" class="nav-link">Cambiar Contraseña</a></li>
             <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
@@ -88,21 +87,32 @@
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
                 <h1><span class="icon mb-3 d-block flaticon-tooth">Turnos</span></h1>
                 <!-- ACA MOSTRAR TURNOS DEL PACIENTE QUE ESTA LOGEADO  -->
-                <?php $sql = "SELECT fecha, hora FROM turnos WHERE id='$_SESSION[id]'";
-                $resultado = mysqli_query($conexion, $sql);
-                while ($ver = mysqli_fetch_array($resultado)) {?>
-                <table>
+                <table border="1">
                   <tr>
-                    <th>Hora</th>
-                    <th>Fecha</th>
+                    <td>Titulo</td>
+                    <td>Fecha</td>
+                    <td>Hora</td>
                   </tr>
 
+                  <?php
+                  include("conexion.php");
+                  $sql = "SELECT * FROM turnos WHERE id_pacientes = '".$_SESSION['id']."'";
+                  $result = mysqli_query($conexion, $sql);
+
+                  while ($mostrar = mysqli_fetch_array($result)) {
+                   ?>
                   <tr>
-                    <th><?php echo $ver['hora']; ?></th>
-                    <th><?php echo $ver['fecha']; ?></th>
+                    <td><?php echo $mostrar['titulo']; ?></td>
+                    <td><?php echo $mostrar['fecha']; ?></td>
+                    <td><?php echo $mostrar['hora']; ?></td>
                   </tr>
+                  <?php
+                }
+                   ?>
                 </table>
-<?php } ?>
+
+
+
               </div>
             </div>
           </div>

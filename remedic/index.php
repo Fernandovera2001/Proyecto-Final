@@ -57,6 +57,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item "><a href="index.php" class="nav-link">Inicio</a></li>
             <li class="nav-item active"><a href="ver_turno.php" class="nav-link">Ver mis turnos</a></li>
+            <li class="nav-item active"><a href="ver_historial.php" class="nav-link">Ver mi historial</a></li>
             <li class="nav-item active"><a href="cambiar_contrasenia_user.php" class="nav-link">Cambiar Contraseña</a></li>
             <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>

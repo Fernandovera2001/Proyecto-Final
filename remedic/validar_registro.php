@@ -13,8 +13,11 @@ $clave = $_POST['clave'];
 
 $query = mysqli_query($conexion, "SELECT id FROM login WHERE email = '$email'");
 $n = mysqli_num_rows($query);
-  if ($n == 1) {
-    echo "El mail ya esta en uso";
+    if ($n == 1) {
+      echo '<script type="text/javascript">
+  		alert("el mail ya se encuentra registrado");
+  		window.location.href="login.php";
+  		</script>';
   }else {
     mysqli_query($conexion, "INSERT INTO login (nombre, apellido, email, fecha_nacimiento, dni, genero, obra_social, contrasenia) VALUES ('$nombre', '$apellido' ,'$email', '$fecha_nacimiento', '$dni', '$generos', '$obra_social', '$clave')");
     header("login.php");

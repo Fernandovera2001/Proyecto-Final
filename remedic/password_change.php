@@ -10,7 +10,10 @@ $confirmnewpassword = $_POST['confirmnewpassword'];
 $query = mysqli_query($conexion, "SELECT id FROM login WHERE email = '$email' and contrasenia = '$password'");
 $result = mysqli_num_rows($query);
 	if ($result == 0) {
-		echo "Contraseña o mail no se encuentran registradas";
+		echo '<script type="text/javascript">
+		alert("Contraseña o mail no se encuentran registrados");
+		window.location.href="interfaz_medic.php";
+		</script>';
 	}else {
     if ($newpassword == $confirmnewpassword) {
           $sql = mysqli_query($conexion, "UPDATE login SET contrasenia='$newpassword' WHERE email='$email'");
@@ -18,8 +21,8 @@ $result = mysqli_num_rows($query);
   }
 
   if ($sql) {
-    echo "Cambiaste la contraseña";
-    header("location:interfaz_medic.php");
-  }else {
-    echo "No se pudo cambiar la contraseña";
+		echo '<script type="text/javascript">
+		alert("Su contraseña se cambio bien");
+		window.location.href="interfaz_medic.php";
+		</script>';
   }
