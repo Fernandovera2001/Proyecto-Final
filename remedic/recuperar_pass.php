@@ -1,5 +1,5 @@
 <h3>Olvide mi Contraseña</h3>
-<form  id="form_olvide_pass" method="post" action="iniciar_recupero.php">
+<form  id="form_olvide_pass" method="get" action="iniciar_recupero.php">
   <input type="text" id="mail" name="mail" placeholder="Mail">
   <br>
   <br>
