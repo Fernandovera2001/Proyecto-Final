@@ -53,7 +53,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><i class="flaticon-pharmacy"></i><span>Re</span>Medic</a>
+        <a class="navbar-brand" href="interfaz_medic.php"><i class="flaticon-pharmacy"></i><span>Re</span>Medic</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
@@ -61,8 +61,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="interfaz_medic.php" class="nav-link">Inicio</a></li>
-            <li class="nav-item active"><a href="cambiar_contraseña.php" class="nav-link">Cambiar Contraseña</a></li>
-            <li class="nav-item"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
+            <li class="nav-item"><a href="cambiar_contraseña.php" class="nav-link">Cambiar Contraseña</a></li>
+            <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
         </div>
       </div>
@@ -84,7 +84,7 @@
           </form>
           </div>
           <!-- TERMINA FORMULARIO CAMBIAR CONTRASEÑA -->
-          
+
           <div class="row no-gutters">
             <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
               <div class="tab-content pl-md-5" id="v-pills-tabContent">

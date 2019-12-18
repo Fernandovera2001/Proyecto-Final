@@ -2,6 +2,7 @@
 <?php
 include("conexion.php");
 ?>
+<meta charset="utf-8">
 <input type="submit" name="turnos" id="volver_turnos" value="Ver turnos">
 <br>
 <br>

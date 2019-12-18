@@ -19,6 +19,11 @@
   <!DOCTYPE html>
   <html lang="en">
     <head>
+      <style media="screen">
+        td{
+          padding: 5px;
+        }
+      </style>
       <title>Remedic</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,8 +61,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
-            <li class="nav-item"><a href="ver_turno.php" class="nav-link">Ver mis turnos</a></li>
-            <li class="nav-item active"><a href="cambiar_contrasenia_user.php" class="nav-link">Cambiar Contraseña</a></li>
+            <li class="nav-item active"><a href="ver_turno.php" class="nav-link">Ver Mis Turnos</a></li>
+            <li class="nav-item "><a href="cambiar_contrasenia_user.php" class="nav-link">Cambiar Contraseña</a></li>
             <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
         </div>
@@ -65,44 +70,25 @@
     </nav>
       <!-- END nav -->
 
-      <div class="hero-wrap" style="background-image: url('images/bg_1.jpg'); height:400px; ">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-8 ftco-animate text-center">
-              <h1 class="mb-4">LO MÁS VALIOSO ES TU SALUD.</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <section class="ftco-services">
-        <div class="container">
+
+        <!-- COMIENZA FORMULARIO CAMBIAR CONTRASEÑA -->
+        <div class="container" style="width: 1100px;">
+          <br>
+          <h5>Cambiar Contraseña</h5>
+          <form method="post" action="password_change.php">
+            <p>Email: <input type="text" name="email"></p>
+            <p>Contraseña: <input type="password" name="password"></p>
+            <p>Nueva Contraseña: <input type="password" name="newpassword"></p>
+            <p>Confirmar Nueva Contraseña: <input type="password" name="confirmnewpassword"></p>
+            <p><input type="submit" value="Actualizar Contraseña">
+          </form>
+          </div>
+          <!-- TERMINA FORMULARIO CAMBIAR CONTRASEÑA -->
+
           <div class="row no-gutters">
-            <div class="col-md-4 ftco-animate py-5 nav-link-wrap">
-              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><span class="mr-3 flaticon-tooth"></span>Turnos</a>
-              </div>
-            </div>
             <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
-                <h1><span class="icon mb-3 d-block flaticon-tooth">Turnos</span></h1>
-                <!-- ACA MOSTRAR TURNOS DEL PACIENTE QUE ESTA LOGEADO  -->
-                <?php $sql = "SELECT fecha, hora FROM turnos WHERE id='$_SESSION[id]'";
-                $resultado = mysqli_query($conexion, $sql);
-                while ($ver = mysqli_fetch_array($resultado)) {?>
-                <table>
-                  <tr>
-                    <th>Hora</th>
-                    <th>Fecha</th>
-                  </tr>
-
-                  <tr>
-                    <th><?php echo $ver['hora']; ?></th>
-                    <th><?php echo $ver['fecha']; ?></th>
-                  </tr>
-                </table>
-<?php } ?>
               </div>
             </div>
           </div>
@@ -111,40 +97,41 @@
 
     <br>
 
-  <!-- FOOTER-->
-      <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Remedic</h2>
-                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                  <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                </ul>
-              </div>
-            </div>
 
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">¿Tiene alguna pregunta?</h2>
-                <div class="block-23 mb-3">
-                  <ul>
-                    <li><span class="icon icon-map-marker"></span><span class="text">Francisco Perito Moreno 601, San Carlos de Bariloche, Río Negro</span></li>
-                    <li><span class="icon icon-phone"></span><span class="text">0294 442-6100</span></a></li>
-                    <li><span class="icon icon-envelope"></span><span class="text">dam@hospitalbariloche.com.ar</span></a></li>
-                  </ul>
-                </div>
-              </div>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Remedic</h2>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
             </div>
           </div>
-          <div class="row">
+
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">¿Alguna Pregunta??</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">DIRECCION</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">ACA VA EL NUMERO DE CEL</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">ACA VA A EL MAIL</span></a></li>
+	              </ul>
+	            </div>
+            </div>
           </div>
         </div>
-      </footer>
+        <div class="row">
 
+        </div>
+      </div>
+    </footer>
 
 
     <!-- loader -->
@@ -222,5 +209,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      });
+    </script>
     </body>
   </html>
