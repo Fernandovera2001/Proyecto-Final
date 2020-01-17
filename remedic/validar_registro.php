@@ -20,6 +20,7 @@ $n = mysqli_num_rows($query);
   		</script>';
   }else {
     mysqli_query($conexion, "INSERT INTO login (nombre, apellido, email, fecha_nacimiento, dni, genero, obra_social, contrasenia) VALUES ('$nombre', '$apellido' ,'$email', '$fecha_nacimiento', '$dni', '$generos', '$obra_social', '$clave')");
+echo "hola";
     header("login.php");
   }
 exit();

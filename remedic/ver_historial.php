@@ -81,12 +81,12 @@ include("conexion.php");
         <div class="row no-gutters">
           <div class="col-md-4 ftco-animate py-5 nav-link-wrap">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><i class="far fa-address-book"></i>Historial Clinico</span></a>
+              <a class="nav-link px-4 active" id="v-pills-master-tab" data-toggle="pill" href="#v-pills-master" role="tab" aria-controls="v-pills-master" aria-selected="true"><i class="far fa-address-book"></i>&nbspHistorial Clinico</span></a>
             </div>
           </div>
           <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center">
             <div class="tab-content pl-md-5" id="v-pills-tabContent">
-              <h1><span class="icon mb-3 d-block"><i class="far fa-address-book"></i>Historial Clinico</span></h1>
+              <h1><span class="icon mb-3 d-block"><i class="far fa-address-book"></i>&nbspHistorial Clinico</span></h1>
               <!-- ACA MOSTRAR TURNOS DEL PACIENTE QUE ESTA LOGEADO  -->
               <table border="1">
                 <tr>

@@ -77,7 +77,7 @@
         <div class="container" style="width: 1100px;">
           <br>
           <h5>Cambiar Contraseña</h5>
-          <form method="post" action="password_change.php">
+          <form method="post" action="password_change2.php">
             <p>Email: <input type="text" name="email"></p>
             <p>Contraseña: <input type="password" name="password"></p>
             <p>Nueva Contraseña: <input type="password" name="newpassword"></p>
