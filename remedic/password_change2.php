@@ -17,7 +17,12 @@ $result = mysqli_num_rows($query);
 	}else {
     if ($newpassword == $confirmnewpassword) {
           $sql = mysqli_query($conexion, "UPDATE login SET contrasenia='$newpassword' WHERE email='$email'");
-      }
+      }else {
+				echo '<script type="text/javascript">
+				alert("Contraseña son diferentes");
+				window.location.href="cambiar_contrasenia_user.php";
+				</script>';
+			}
   }
 
   if ($sql) {

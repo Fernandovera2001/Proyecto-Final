@@ -1,6 +1,7 @@
 <input type="submit" name="pacientes" id="btn_pacientes" value="Pacientes">
 <br>
 <br>
+<h3>Turnos</h3>
 <div class="turnos_pacientes">
 <table border="1">
   <tr>
@@ -10,6 +11,7 @@
     <td>Titulo</td>
     <td>Fecha</td>
     <td>Hora</td>
+    <td>Eliminar Turno</td>
   </tr>
 
   <?php
@@ -26,6 +28,8 @@
     <td><?php echo $mostrar['titulo']; ?></td>
     <td><?php echo $mostrar['fecha']; ?></td>
     <td><?php echo $mostrar['hora']; ?></td>
+    <td><a href="cancelar_turno.php?id=<?php echo $mostrar['id'];?>">Cancelar Turno</a></td>
+
   </tr>
   <?php
 }

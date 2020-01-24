@@ -92,6 +92,7 @@
                     <td>Titulo</td>
                     <td>Fecha</td>
                     <td>Hora</td>
+                    <td>Cancelar Turno</td>
                   </tr>
 
                   <?php
@@ -105,6 +106,7 @@
                     <td><?php echo $mostrar['titulo']; ?></td>
                     <td><?php echo $mostrar['fecha']; ?></td>
                     <td><?php echo $mostrar['hora']; ?></td>
+                    <td><a href="cancelar_turno.php?id=<?php echo $mostrar['id'];?>">Cancelar Turno</a></td>
                   </tr>
                   <?php
                 }

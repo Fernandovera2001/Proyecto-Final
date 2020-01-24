@@ -89,11 +89,11 @@
 
               <div class="tab-content pl-md-5" id="v-pills-tabContent">
 
-                <h1><span class="icon mb-3 d-block flaticon-tooth">Odontología</span></h1>
+                <h1><span class="icon mb-3 d-block flaticon-tooth">PEDIR TURNO</span></h1>
 
                   <!-- CALENDARIO PARA LOS TURNOS -->
                   <form action="registrar_turno.php" method="post">
-                    Coloque Titulo
+                    Motivo de consulta
                     <br><input type="text" required name="titulo"><br>
 
                     Eliga Fecha<br>
