@@ -1,3 +1,6 @@
+<?php
+include("seguridad.php");
+ ?>
 <a class="flecha" href="interfaz_medic.php"><i class="fas fa-arrow-circle-left"></i></a>
 <head>
   <script src="https://kit.fontawesome.com/9305e722fd.js" crossorigin="anonymous"></script>

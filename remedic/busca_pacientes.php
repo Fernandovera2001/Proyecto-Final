@@ -11,6 +11,7 @@
 
 <?php
 include("conexion.php");
+include("seguridad.php");
 $busca = $_GET['busca'];
 $query = mysqli_query($conexion, "SELECT * FROM login WHERE tipo='paciente' AND apellido LIKE '%".$busca."%'");
 while ($data = mysqli_fetch_array($query)) {
@@ -21,7 +22,7 @@ while ($data = mysqli_fetch_array($query)) {
       <td><?php echo $data['email']; ?></td>
       <td><a href="Historial_clinico.php?id=<?php echo $data['id']; ?>">Ver historial clinico</a></td>
       <td><a href="agregar_historial.php?id=<?php echo $data['id']; ?>">Agregar historial clinico</a></td>
-      <td><a href="eliminar_historial.php?id=<?php echo $mostrar['id'];?>">Eliminar historial clinico</a></td>
+      <td><a href="eliminar_historial.php?id=<?php echo $data['id'];?>">Eliminar historial clinico</a></td>
     </tr>
 
   <?php

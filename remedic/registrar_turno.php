@@ -1,13 +1,16 @@
 <?php
 session_start();
 include("conexion.php");
+include("seguridad.php");
+
 $titulo = $_POST['titulo'];
 $fecha = $_POST['fecha'];
 $horario = $_POST['horario'];
 
-$query = mysqli_query($conexion, "SELECT id FROM turnos WHERE fecha = '$fecha' and hora = '$horario'");
+
+$query = mysqli_query($conexion, "SELECT id_turnos FROM turnos WHERE fecha = '$fecha' and hora = '$horario'");
 $resultados  = mysqli_num_rows($query);
-  if ($resultados == 1) {
+  if ($resultados != 0) {
     echo '<script type="text/javascript">
 		alert("fecha u horarios ocupados");
 		window.location.href="index.php";

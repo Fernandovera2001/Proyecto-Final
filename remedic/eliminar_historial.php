@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("seguridad.php");
 $id = $_GET['id'];
 include("conexion.php");
 

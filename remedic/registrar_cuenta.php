@@ -1,3 +1,6 @@
+<?php
+include("seguridad.php");
+ ?>
 <h3>Formulario de registro</h3>
 <form  id="consulta">
   <input type="text" id="nombre" name="nombre" placeholder="Nombre">

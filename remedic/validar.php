@@ -1,5 +1,6 @@
 <?php
 include("conexion.php");
+include("seguridad.php");
 
 $email = $_POST['email'];
 $clave = $_POST['clave'];

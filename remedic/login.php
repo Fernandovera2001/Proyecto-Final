@@ -46,6 +46,8 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-8 ftco-animate text-center">
+              <!--LOOGIN-->
+
             <div class="container" id="contenido_registrar">
                 <a class="btn" id="btn_olvidepass">Olvide mi contraseña</a>
               <form id="alta"  method="post" action="validar.php">
@@ -62,6 +64,9 @@
         </div>
       </div>
     </div>
+
+
+    
 <!-- FOOTER-->
     <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
     	<div class="overlay"></div>
@@ -77,14 +82,6 @@
 	                <li><span class="icon icon-twitter"></span><span class="text">dam@hospitalbariloche.com.ar</span></a></li>
 	              </ul>
 	            </div>
-              <!-- <h2 class="ftco-heading-2">Remedic</h2>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <br>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <br>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul> -->
             </div>
           </div>
           <div class="col-md">

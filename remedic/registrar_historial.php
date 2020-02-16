@@ -1,5 +1,7 @@
 <?php
 include("conexion.php");
+include("seguridad.php");
+
 $fecha = $_POST['fecha_consulta'];
 $historial = $_POST['historial'];
 $id = $_POST['id'];

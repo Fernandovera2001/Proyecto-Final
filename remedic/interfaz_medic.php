@@ -102,7 +102,7 @@
               <td><?php echo $mostrar['titulo']; ?></td>
               <td><?php echo $mostrar['fecha']; ?></td>
               <td><?php echo $mostrar['hora']; ?></td>
-              <td><a href="cancelar_turno.php?id=<?php echo $mostrar['id'];?>">Cancelar Turno</a></td>
+              <td><a href="cancelar_turnos.php?id_turnos=<?php echo $mostrar['id_turnos'];?>">Cancelar Turno</a></td>
             </tr>
             <?php
           }

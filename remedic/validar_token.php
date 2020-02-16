@@ -1,5 +1,6 @@
 <?php
 include("conexion.php");
+include("seguridad.php");
 
 $mail = $_POST['email'];
 $token = $_POST['token'];

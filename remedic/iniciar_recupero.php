@@ -1,5 +1,7 @@
 <?php
   include("conexion.php");
+  include("seguridad.php");
+
   $mail = $_GET['mail'];
 
   $random = rand(1,1000);

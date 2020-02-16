@@ -1,3 +1,6 @@
+<?php
+include("seguridad.php");
+ ?>
 <h3>Olvide mi Contraseña</h3>
 <form  id="form_olvide_pass" method="get" action="iniciar_recupero.php">
   <input type="text" id="mail" name="mail" placeholder="Mail">
@@ -6,6 +9,9 @@
   <button type="submit" id="recuperar_pass">Recuperar Contraseña</button>
 </form>
   <button name="submit" id="volver_login">Volver a Login</button>
+
+
+
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript">

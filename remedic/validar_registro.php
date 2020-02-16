@@ -1,5 +1,7 @@
 <?php
 include("conexion.php");
+include("seguridad.php");
+
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['gmail'];

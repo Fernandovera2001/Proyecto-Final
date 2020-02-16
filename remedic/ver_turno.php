@@ -97,7 +97,7 @@
 
                   <?php
                   include("conexion.php");
-                  $sql = "SELECT * FROM turnos WHERE id_pacientes = '".$_SESSION['id']."'";
+                  $sql = "SELECT * FROM turnos INNER JOIN login ON turnos.id_pacientes = login.id WHERE id_pacientes = '".$_SESSION['id']."'";
                   $result = mysqli_query($conexion, $sql);
 
                   while ($mostrar = mysqli_fetch_array($result)) {
@@ -106,15 +106,12 @@
                     <td><?php echo $mostrar['titulo']; ?></td>
                     <td><?php echo $mostrar['fecha']; ?></td>
                     <td><?php echo $mostrar['hora']; ?></td>
-                    <td><a href="cancelar_turno.php?id=<?php echo $mostrar['id'];?>">Cancelar Turno</a></td>
+                    <td><a href="cancelar_turno.php?id_cancelar=<?php echo $mostrar['id_turnos'];?>">Cancelar Turno</a></td>
                   </tr>
                   <?php
                 }
                    ?>
                 </table>
-
-
-
               </div>
             </div>
           </div>
