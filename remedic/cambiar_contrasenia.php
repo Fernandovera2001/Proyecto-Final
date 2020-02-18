@@ -61,7 +61,9 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="interfaz_medic.php" class="nav-link">Inicio</a></li>
-            <li class="nav-item"><a href="cambiar_contraseña.php" class="nav-link">Cambiar Contraseña</a></li>
+            <li class="nav-item active"><a name="pacientes" id="btn_pacientes" class="nav-link">Pacientes</a></li>
+            <li class="nav-item active"><a name="turnos" id="btn_turnos" class="nav-link">Turnos</a></li>
+            <li class="nav-item"><a href="cambiar_contrasenia.php" class="nav-link">Cambiar Contraseña</a></li>
             <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
         </div>
@@ -72,9 +74,9 @@
       <section class="ftco-services">
 
         <!-- COMIENZA FORMULARIO CAMBIAR CONTRASEÑA -->
-        <div class="container" style="width: 1100px;">
-          <br>
-          <h5>Cambiar Contraseña</h5>
+        <div class="container" id="container" style="width: 1100px;">
+          <br><br>
+          <h3>Cambiar contraseña</h3>
           <form method="post" action="password_change.php">
             <p>Email: <input type="text" name="email"></p>
             <p>Contraseña: <input type="password" name="password"></p>
@@ -213,6 +215,25 @@
     <script type="text/javascript">
     $(document).ready(function(){
 
+      $("#btn_pacientes").on("click", function(){
+        $.ajax({
+          type: "POST",
+          url: "ver_pacientes.php",
+          success: function(response){
+            $("#container").html(response);
+          }
+        });
+      });
+
+      $("#btn_turnos").on("click",function(){
+        $.ajax({
+          type: "POST",
+          url: "ver_turnos.php",
+          success: function(response){
+            $("#container").html(response);
+          }
+        });
+      });
       });
     </script>
     </body>

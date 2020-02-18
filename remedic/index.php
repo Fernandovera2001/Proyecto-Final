@@ -97,7 +97,9 @@
                     <br><input type="text" required name="titulo"><br>
 
                     Eliga Fecha<br>
-                    <input id="fecha" name="fecha" type="date" required min="<?php echo date("y-m-d"); ?>"><br>
+                    <input id="fecha" name="fecha" type="date" required min="<?php
+                    date_default_timezone_set('America/Argentina/Buenos_Aires');
+                     echo date("Y-m-d",strtotime(date("Y-m-d"))) ?>"><br>
 
                     Eliga Hora<br>
                     <select id="horario" required name="horario">

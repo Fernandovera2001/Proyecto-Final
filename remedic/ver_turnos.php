@@ -1,4 +1,3 @@
-<input type="submit" name="pacientes" id="btn_pacientes" value="Pacientes">
 <br>
 <br>
 <h3>Turnos</h3>

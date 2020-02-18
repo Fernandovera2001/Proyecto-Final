@@ -61,6 +61,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="interfaz_medic.php" class="nav-link">Inicio</a></li>
+            <li class="nav-item active"><a name="pacientes" id="btn_pacientes" class="nav-link">Pacientes</a></li>
+            <li class="nav-item active"><a name="turnos" id="btn_turnos" class="nav-link">Turnos</a></li>
             <li class="nav-item active"><a href="cambiar_contrasenia.php" class="nav-link">Cambiar Contraseña</a></li>
             <li class="nav-item active"><a href="logout.php" class="nav-link">Cerrar Sesión</a></li>
           </ul>
@@ -71,7 +73,6 @@
 
       <section class="ftco-services">
         <div class="container" id="container" style="width: 1100px;">
-          <input type="submit" name="pacientes" id="btn_pacientes" value="Pacientes">
           <br>
           <br>
           <h3>Turnos</h3>
@@ -267,6 +268,18 @@
             }
           });
         });
+
+        $("#btn_turnos").on("click",function(){
+          $.ajax({
+            type: "POST",
+            url: "ver_turnos.php",
+            success: function(response){
+              $("#container").html(response);
+            }
+          });
+        });
+
+
 
 
 
