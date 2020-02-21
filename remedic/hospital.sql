@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-02-2020 a las 23:44:26
+-- Tiempo de generación: 21-02-2020 a las 10:30:10
 -- Versión del servidor: 5.7.17-log
 -- Versión de PHP: 5.6.30
 
@@ -38,7 +38,8 @@ CREATE TABLE `historial_clinico` (
 --
 
 INSERT INTO `historial_clinico` (`id`, `id_pacientes`, `fecha_consulta`, `historial`) VALUES
-(3, 8, '2020-02-16', 'vino por que le dolia mucho el estomago');
+(5, 13, '2020-02-15', 'me siento muy muy mal'),
+(21, 5, '2020-02-20', '95239525');
 
 -- --------------------------------------------------------
 
@@ -47,7 +48,7 @@ INSERT INTO `historial_clinico` (`id`, `id_pacientes`, `fecha_consulta`, `histor
 --
 
 CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
+  `id_login` int(11) NOT NULL,
   `nombre` varchar(15) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
   `apellido` varchar(25) NOT NULL,
   `email` varchar(25) NOT NULL,
@@ -64,7 +65,7 @@ CREATE TABLE `login` (
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`id`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `dni`, `genero`, `obra_social`, `contrasenia`, `tipo`, `token`) VALUES
+INSERT INTO `login` (`id_login`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `dni`, `genero`, `obra_social`, `contrasenia`, `tipo`, `token`) VALUES
 (1, 'Claudio', 'Vera', 'claudio.vera@cts', '0000-00-00', 43382247, 'hombre', 'ipross', '123', 'paciente', ''),
 (2, 'mariane', 'vere', 'mariane@cts', '0000-00-00', 12131445, 'femenino', 'medife', '1234', 'paciente', ''),
 (3, '', '', 'FacundoDoc@hotmail.com.ar', '0000-00-00', 0, '', '', '123', 'doctor', ''),
@@ -79,7 +80,8 @@ INSERT INTO `login` (`id`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `d
 (12, 'Gianluca', 'barreyro', 'gian.barreyro@cts.edu.ar', '2000-11-14', 42911632, 'hombre', 'ipross', '123', 'paciente', ''),
 (13, 'Emiliano', 'Hernandez', 'hernandez.emi@cts.ar', '2003-05-03', 43948265, 'hombre', 'Arcod Salud', '123', 'paciente', ''),
 (15, 'Paola', 'Vera', 'vera.paola@gmail.com.ar', '1981-11-23', 29165629, 'femenino', 'Ospe', '123', 'paciente', ''),
-(24, 'fe', 'fer', 'fer@fer', '2019-12-03', 56546565, 'hombre', 'Medife', '123', 'paciente', '');
+(24, 'fe', 'fer', 'fer@fer', '2019-12-03', 56546565, 'hombre', 'Medife', '123', 'paciente', ''),
+(29, 'Fer', 'Vera', 'f@f.com', '2001-06-23', 43382247, 'hombre', 'Arcod Salud', '123', 'paciente', '');
 
 -- --------------------------------------------------------
 
@@ -96,13 +98,6 @@ CREATE TABLE `turnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `turnos`
---
-
-INSERT INTO `turnos` (`id_turnos`, `id_pacientes`, `titulo`, `fecha`, `hora`) VALUES
-(43, 8, 'hola', '2020-02-27', 17);
-
---
 -- Índices para tablas volcadas
 --
 
@@ -116,7 +111,7 @@ ALTER TABLE `historial_clinico`
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_login`);
 
 --
 -- Indices de la tabla `turnos`
@@ -132,17 +127,17 @@ ALTER TABLE `turnos`
 -- AUTO_INCREMENT de la tabla `historial_clinico`
 --
 ALTER TABLE `historial_clinico`
-  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `id_turnos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_turnos` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
