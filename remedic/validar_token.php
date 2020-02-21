@@ -6,7 +6,7 @@ $mail = $_POST['email'];
 $token = $_POST['token'];
 $newpssw = $_POST['newpssw'];
 
-$query = mysqli_query($conexion, "SELECT id FROM login WHERE email = '$mail' and token = '$token'");
+$query = mysqli_query($conexion, "SELECT id_login FROM login WHERE email = '$mail' and token = '$token'");
 $result = mysqli_num_rows($query);
 	if ($result == 0) {
 		echo '<script type="text/javascript">
