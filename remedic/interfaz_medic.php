@@ -90,7 +90,7 @@
 
             <?php
             include("conexion.php");
-            $sql = "SELECT * FROM turnos INNER JOIN login ON turnos.id_pacientes = login.id";
+            $sql = "SELECT * FROM turnos INNER JOIN login ON turnos.id_pacientes = login.id_login";
             $result = mysqli_query($conexion, $sql);
 
             //$resultado = mysqli_query($conexion, "SELECT nombre FROM login WHERE email = '$email'");
@@ -212,10 +212,6 @@
           </div>
         </div>
       </div>
-      <style type="text/css">@import url("css/calendar-blue.css");</style>
-  <script src="js/calendar.js" type="text/javascript"></script>
-  <script src="js/calendar-es.js" type="text/javascript"></script>
-  <script src="js/calendar-setup.js" type="text/javascript"></script>
 
 
     <script src="js/jquery.min.js"></script>
@@ -278,9 +274,6 @@
             }
           });
         });
-
-
-
 
 
         $("#container").on("keyup","#pacientes", function(){

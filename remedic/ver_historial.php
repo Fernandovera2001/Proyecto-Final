@@ -96,7 +96,7 @@ include("conexion.php");
 
                 <?php
                 include("conexion.php");
-                $sql = "SELECT * FROM historial_clinico INNER JOIN login ON historial_clinico.id_pacientes = login.id WHERE id_pacientes = '".$_SESSION['id']."'";
+                $sql = "SELECT * FROM historial_clinico INNER JOIN login ON historial_clinico.id_pacientes = login.id_login WHERE id_pacientes = '".$_SESSION['id']."'";
                 $result = mysqli_query($conexion, $sql);
 
                 while ($mostrar = mysqli_fetch_array($result)) {

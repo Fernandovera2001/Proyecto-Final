@@ -19,7 +19,6 @@ include("seguridad.php");
     <td>Nombre</td>
     <td>Email</td>
     <td>Ver Historial Clinico</td>
-    <td>Agregar Historial Clinico</td>
     <td>Eliminar Historial Clinico</td>
   </tr>
 
@@ -33,9 +32,8 @@ while ($mostrar = mysqli_fetch_array($result)) {
     <td><?php echo $mostrar['apellido']; ?></td>
     <td><?php echo $mostrar['nombre']; ?></td>
     <td><?php echo $mostrar['email']; ?></td>
-    <td><a href="Historial_clinico.php?id=<?php echo $mostrar['id'];?>">Ver historial clinico</a></td>
-    <td><a href="agregar_historial.php?id=<?php echo $mostrar['id'];?>">Agregar historial clinico</a></td>
-    <td><a href="eliminar_historial.php?id=<?php echo $mostrar['id'];?>">Eliminar historial clinico</a></td>
+    <td><a href="Historial_clinico.php?id=<?php echo $mostrar['id_login'];?>">Ver historial clinico</a></td>
+    <td><a href="eliminar_historial.php?id=<?php echo $mostrar['id_login'];?>">Eliminar historial clinico</a></td>
   </tr>
   <?php
 }

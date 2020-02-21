@@ -66,7 +66,7 @@
     </div>
 
 
-    
+
 <!-- FOOTER-->
     <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
     	<div class="overlay"></div>
@@ -167,9 +167,6 @@
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
   <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/npm.js"></script>
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript">
@@ -177,6 +174,7 @@
     $(document).ready(function(){
       $("#btn_crearcuenta").on("click",function(){ //APRETAMOS EL BOTON CON EL ID #btn_crearcuenta
         $.ajax({
+          type: "POST",
           url: "registrar_cuenta.php", //TRAE LO QUE ESTA EN registrar_cuenta.html
           success: function(response){
             $("#contenido_registrar").html(response); //Y LO IMPRIME EN EL ID contenido_registrar
@@ -186,6 +184,7 @@
 
     $("#btn_olvidepass").on("click",function(){
       $.ajax({
+        type: "POST",
         url: "recuperar_pass.php",
         success: function(response){
           $("#contenido_registrar").html(response);

@@ -1,3 +1,4 @@
+
 <br>
 <br>
 <h3>Turnos</h3>
@@ -15,7 +16,8 @@
 
   <?php
   include("conexion.php");
-  $sql = "SELECT * FROM turnos INNER JOIN login ON turnos.id_pacientes = login.id";
+  include("./seguridad.php");
+  $sql = "SELECT * FROM turnos INNER JOIN login ON turnos.id_pacientes = login.id_login";
   $result = mysqli_query($conexion, $sql);
 
   while ($mostrar = mysqli_fetch_array($result)) {

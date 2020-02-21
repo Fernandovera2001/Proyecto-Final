@@ -216,10 +216,6 @@
         </div>
       </div>
       <style type="text/css">@import url("css/calendar-blue.css");</style>
-  <script src="js/calendar.js" type="text/javascript"></script>
-  <script src="js/calendar-es.js" type="text/javascript"></script>
-  <script src="js/calendar-setup.js" type="text/javascript"></script>
-
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
