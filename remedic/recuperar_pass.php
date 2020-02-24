@@ -1,5 +1,4 @@
 <?php
-include("seguridad.php");
  ?>
 <h3>Olvide mi Contraseña</h3>
 <form  id="form_olvide_pass" method="get" action="iniciar_recupero.php">

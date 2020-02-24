@@ -1,5 +1,4 @@
 <?php
-include("seguridad.php");
  ?>
 <h3>Formulario de registro</h3>
 <form  id="consulta">

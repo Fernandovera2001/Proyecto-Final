@@ -1,6 +1,5 @@
 <?php
 include("conexion.php");
-include("seguridad.php");
 
 $email = $_POST['email'];
 $clave = $_POST['clave'];
@@ -18,7 +17,7 @@ $result = mysqli_num_rows($query);
 			$id = $row['id_login'];
 			session_start();
 			$_SESSION['email'] = $email;
-			$_SESSION['id_login'] = $id;
+			$_SESSION['id'] = $id;
 			$_SESSION['autenticado'] = 'si';
 
 			if ($tipo == 'doctor') {
